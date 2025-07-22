@@ -58,6 +58,47 @@ body {
     user-select: none;
 }
 
+.correctAnswer {
+    padding: 18px 10px;
+    background: linear-gradient(90deg, #66ff66 0%, #e6ffe6 100%);
+    border: 2px solid #00cc00;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,204,0,0.25);
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.WrongAnswer {
+    padding: 18px 10px;
+    background: linear-gradient(90deg, #ff6666 0%, #ffe6e6 100%);
+    border: 2px solid #cc0000;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(204,0,0,0.25);
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.optionDisabled {
+    padding: 18px 10px;
+    background: linear-gradient(90deg, #ffe066 0%, #fffbe7 100%);
+    border: 2px solid #ffd200;
+    border-radius: 14px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: not-allowed;
+    outline: none;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
 .option:hover, .option:focus {
     background: linear-gradient(90deg, #ffd200 0%, #ffe066 100%);
     transform: scale(1.04);

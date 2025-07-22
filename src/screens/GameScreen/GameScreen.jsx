@@ -4,15 +4,16 @@ import React from "react";
 import Options from "../../Components/Quiz/Options";
 import QuizControls from "../../Components/Quiz/QuizControls";
 import { useQuizContext } from "../../ContextApi/ContextAPIData";
+import Result from "../../Components/Quiz/Result";
 function GameScreen() {
-  const { currentQuestion } = useQuizContext();
+  const { currentQuestion , userAnswers } = useQuizContext();
   return (
     <>
       <div className="game-screen">
         <QuestionCard index={currentQuestion} />
         <Options index={currentQuestion} />
         <QuizControls />
-        <h1></h1>
+        {userAnswers[9] != " " && <Result />}
       </div>
     </>
   );
