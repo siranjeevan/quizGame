@@ -1,15 +1,13 @@
 import { questions } from "../../Data/Data";
 import { useQuizContext } from "../../ContextApi/ContextAPIData";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
 function Options({ index }) {
-  const {CurrentAnswer, setCurrentAnswer} = useQuizContext();
+  const { CurrentAnswer, setCurrentAnswer } = useQuizContext();
 
-  function setAnswer(answer) {
-    setCurrentAnswer(answer);
-    console.log("current answer", CurrentAnswer)
-    console.log(answer, "selected for question", index + 1);
-  }
+  // useEffect(() => {
+  //   console.log("current answer", CurrentAnswer);
+  // }, [CurrentAnswer]);
 
   return (
     <div className="options">
@@ -17,7 +15,7 @@ function Options({ index }) {
         <button
           key={idx}
           className="option"
-          onClick={() => setAnswer(option)}
+          onClick={() => setCurrentAnswer(option)}
         >
           {idx + 1}. {option}
         </button>

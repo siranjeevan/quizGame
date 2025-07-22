@@ -1,7 +1,7 @@
 import { useQuizContext } from "../../ContextApi/ContextAPIData";
 function QuizControls() {
 
-    const { currentQuestion, setCurrentQuestion, score, setScore, quizOver, setQuizOver ,currentAnswer , userAnswers , setUserAnswers  } = useQuizContext();
+    const { currentQuestion, setCurrentQuestion, score, setScore, quizOver, setQuizOver , CurrentAnswer , setCurrentAnswer , userAnswers , setUserAnswers  } = useQuizContext();
 
     function handleNext() {
         if (currentQuestion < 9) {
@@ -10,33 +10,33 @@ function QuizControls() {
             setQuizOver(true);
         }
         console.log("Next Question", currentQuestion + 1);
+        setCurrentAnswer(" ");
     }
 
     function handlePrevious() {
         if (currentQuestion > 0) {
             setCurrentQuestion(currentQuestion - 1);
         }
+        setCurrentAnswer(" ");
         console.log("Previous Question", currentQuestion - 1);
     }
 
     function handleSubmit() {
-        if (currentAnswer) {
-            const updatedAnswers = [...userAnswers];
-            updatedAnswers[currentQuestion] = currentAnswer;
-            setUserAnswers(updatedAnswers);
-            console.log("Submitted Answer for Question", currentQuestion + 1, ":", currentAnswer);
-        } else {
-            console.log("No answer selected for Question", currentQuestion + 1);
-        }
+        const updatedAnswers = [...userAnswers];
+        updatedAnswers[currentQuestion] = CurrentAnswer;
+        setUserAnswers(updatedAnswers);
+        
+        console.log(updatedAnswers, "User Answers");
+
 
     }
 
   return (
     <>
       <div className="QuizControls">
-        <button className="ControlButton" onClick={()=> {handlePrevious(); }} >Previous</button>
-        <button className="ControlButton" onClick={()=> {handleSubmit(); }} >Submit</button>
-        <button className="ControlButton" onClick={()=> {handleNext(); }} >Next</button>
+        <button className={ currentQuestion === 0 ? "PreviousDisabled" : "Previous" } id = "ControlButton" onClick={()=> {handlePrevious(); }} >Previous</button>
+        <button className= { CurrentAnswer === " " ? "SubmitDisabled" : "Submit" } id = "ControlButton" onClick={()=> {handleSubmit(); }} >Submit</button>
+        <button className={currentQuestion === 9 || userAnswers[currentQuestion] === " "  ? "NextDisabled" : "Next" }  id = "ControlButton" onClick={()=> {handleNext(); }} > Next </button>
       </div>
     </>
   );

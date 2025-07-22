@@ -73,7 +73,7 @@ body {
     gap: 20px;
 }
 
-.ControlButton {
+#ControlButton {
     width: 150px;
     height: 50px;
     background: linear-gradient(90deg, #ffd200 0%, #ffe066 100%);
@@ -86,9 +86,46 @@ body {
     box-shadow: 0 2px 8px rgba(247,191,23,0.15);
     transition: background 0.2s, transform 0.2s;
 }
-
-.ControlButton:hover, .ControlButton:focus {
-    background: linear-gradient(90deg, #ffe066 0%, #ffd200 100%);
-    transform: scale(1.05);
+.Previous, .Submit, .Next {
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(90deg, #ffd200 0%, #ffe066 100%);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+    box-shadow: 0 2px 8px rgba(247,191,23,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+.PreviousDisabled {
+    background: linear-gradient(90deg, #eee 0%, #ccc 100%);
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
     outline: none;
+    opacity: 0.7;
+    pointer-events: none;
+}
+.SubmitDisabled {
+    background: linear-gradient(90deg, #eee 0%, #ccc 100%);
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    outline: none;
+    opacity: 0.7;
+    pointer-events: none;
+}
+.NextDisabled {
+    background: linear-gradient(90deg, #eee 0%, #ccc 100%);
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    outline: none;
+    opacity: 0.7;
+    pointer-events: none;
 }

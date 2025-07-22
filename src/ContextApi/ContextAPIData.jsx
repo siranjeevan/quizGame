@@ -6,7 +6,7 @@ export function QuizProvider({ children }) {
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
   const [userAnswers, setUserAnswers] = useState(Array(10).fill(" "));
-  const [CurrentAnswer, setCurrentAnswer] = useState("");
+  const [CurrentAnswer, setCurrentAnswer] = useState(" ");
 
   return (
     <QuizContext.Provider
