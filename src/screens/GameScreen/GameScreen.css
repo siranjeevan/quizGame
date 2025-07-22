@@ -1,0 +1,94 @@
+body {
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    font-family: 'Segoe UI', 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-screen {
+    width: 700px;
+    max-width: 95vw;
+    height: 600px;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.95);
+    border-radius: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    border: 2px solid #ffd200;
+    padding: 40px 20px;
+}
+
+.question {
+    font-size: 2.2rem;
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 1px 2px 8px #ffe066;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.option {
+    padding: 18px 10px;
+    background: linear-gradient(90deg, #ffe066 0%, #fffbe7 100%);
+    border-radius: 14px;
+    border: 2px solid #ffd200;
+    box-shadow: 0 2px 8px rgba(247,191,23,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.option:hover, .option:focus {
+    background: linear-gradient(90deg, #ffd200 0%, #ffe066 100%);
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px rgba(247,191,23,0.25);
+    outline: none;
+}
+
+.QuizControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.ControlButton {
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(90deg, #ffd200 0%, #ffe066 100%);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+    box-shadow: 0 2px 8px rgba(247,191,23,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.ControlButton:hover, .ControlButton:focus {
+    background: linear-gradient(90deg, #ffe066 0%, #ffd200 100%);
+    transform: scale(1.05);
+    outline: none;
+}
