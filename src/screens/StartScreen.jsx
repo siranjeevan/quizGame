@@ -6,6 +6,7 @@ function StartScreen() {
             <button className="start-button">Start</button>
         </div>
     </>
+
   )
 }
 export default StartScreen;
