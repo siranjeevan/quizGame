@@ -10,8 +10,8 @@ function Options({ index }) {
         <button
           key={idx}
           className={
-            userAnswers[currentQuestion] === option &&
-            userAnswers[currentQuestion] == questions[index].answer
+            (userAnswers[currentQuestion] === option &&
+            userAnswers[currentQuestion] == questions[index].answer) || (option == questions[index].answer && userAnswers[currentQuestion] != " ")
               ? "correctAnswer"
               : userAnswers[currentQuestion] === " "
               ? "option"
