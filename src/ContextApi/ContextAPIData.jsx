@@ -9,7 +9,7 @@ export function QuizProvider({ children }) {
   const [CurrentAnswer, setCurrentAnswer] = useState(" ");
 
   return (
-    <QuizContext.Provider
+    <QuizContext.Provider 
       value={{
         currentQuestion,
         setCurrentQuestion,
